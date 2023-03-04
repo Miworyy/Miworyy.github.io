@@ -1,0 +1,241 @@
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body.full {
+    overflow: hidden;
+}
+
+header div *,
+header .logo h1,
+.hero h1,
+.hero p,
+.hero table,
+.main .post .desc h1,
+.main .post .desc p,
+footer h1
+{
+    font-family: 'Whitney';
+    font-weight: 500;
+    font-style: normal;
+}
+
+a, p, h1 {
+    color: white;
+    text-decoration: none;
+}
+
+header {
+    background-color: #404eed;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 15px;
+}
+
+header div * {
+    font-size: 1em;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+header div *:hover {
+    border-color: white;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.5em;
+    display: flex;
+    gap: 5px;
+}
+
+header .logo h1 img {
+    width: 25px;
+}
+
+header .navigation {
+    display: flex;
+    gap: 30px;
+}
+
+header .account .loginButton {
+    cursor: pointer;
+}
+
+.download a {
+    color: black;
+    font-size: 24px;
+    border-radius: 25px;
+    background-color: #f6f6f6;
+    padding: 10px 30px 10px 30px!important;
+}
+
+.hero {
+    background-color: #404eed;
+    color: white;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.hero.full {
+    height: 100%;
+}
+
+.hero h1 {
+    padding-top: 50px;
+    margin: 0;
+    text-align: center;
+    font-size: 60px;
+}
+
+.hero p {
+    text-align: center;
+    font-size: 24px;
+    padding: 10px 100px 00px 100px;
+}
+
+.hero table,
+.post table
+{
+    display: flex;
+    justify-content: center;
+    font-size: 26px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    padding: 10px 10px 40px 10px;
+}
+
+.hero table th,
+.hero table td {
+    padding: 5px 30px;
+}
+
+.hero .svg {
+    background-image: url('../img/1.svg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero .svg img {
+    width: auto;
+    height: auto;
+}
+
+.main .post {
+    padding: 100px 50px 100px 50px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    overflow: hidden;
+}
+
+.main .post * {
+    color: black;
+}
+
+.main .post:nth-child(odd) {
+    background-color: white;
+}
+
+.main .post:nth-child(even) {
+    background-color: #f6f6f6;
+    flex-direction: row-reverse;
+}
+
+.main .post .desc {
+    width: 300px;
+}
+
+.main .post.extended .desc {
+    width: 800px;
+}
+
+.main .post.extended .desc table tr th {
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
+
+.main .post.extended .desc table tr th.green {
+    color: green;
+}
+
+.main .post.extended .desc table tr th.red {
+    color: red;
+}
+
+.main .post .desc h1 {
+    font-size: 40px;
+}
+
+.main .post .desc p {
+    font-size: 20px;
+}
+
+.login {
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.login.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+body:has(.login.active) {
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.login div {
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    padding: 15px 45px 15px 45px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login div h1,
+.login div p
+{
+    color: black;
+    font-family: 'Whitney';
+    font-weight: 500;
+    font-style: normal;
+}
+
+footer {
+    background-color: #404eed;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.login div input[type="button"] {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+@media only screen and (max-width: 1000px) {
+    .post {
+        flex-direction: column!important;
+    }
+}
